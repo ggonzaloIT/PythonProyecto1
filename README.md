@@ -1,8 +1,8 @@
-# PythonProyecto1
+# Books Web
 
 ## Descripción
 
-PythonProyecto1 es una aplicación web de biblioteca desarrollada con Django que permite gestionar el alquiler de libros, el registro de títulos y autores, y la búsqueda de información en la base de datos.
+Books Web es una aplicación web de biblioteca desarrollada con Django que permite gestionar el alquiler de libros, el registro de títulos y autores, y la búsqueda de información en la base de datos.
 
 ## Funcionalidades
 
