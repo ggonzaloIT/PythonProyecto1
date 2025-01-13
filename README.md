@@ -56,6 +56,6 @@ El módulo de alta de autores se utiliza para registrar el nombre del autor y lo
 Puedes navegar entre las diferentes funcionalidades utilizando el menú de navegación en la parte superior de la página.
 
 - **Buscar**: Navega a la página del buscador.
-- **Formulario Modelo 1**: Navega a la página de alta de alquiler de libros.
-- **Formulario Modelo 2**: Navega a la página de alta de títulos.
-- **Formulario Modelo 3**: Navega a la página de alta de autores.
+- **Alta de Alquiler**: Navega a la página de alta de alquiler de libros.
+- **Alta de Libros**: Navega a la página de alta de títulos.
+- **Alta de Autor**: Navega a la página de alta de autores.
