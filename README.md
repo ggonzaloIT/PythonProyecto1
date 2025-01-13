@@ -57,5 +57,5 @@ Puedes navegar entre las diferentes funcionalidades utilizando el menú de naveg
 
 - **Buscar**: Navega a la página del buscador.
 - **Alta de Alquiler**: Navega a la página de alta de alquiler de libros.
-- **Alta de Libros**: Navega a la página de alta de títulos.
+- **Alta de Titulos**: Navega a la página de alta de títulos.
 - **Alta de Autor**: Navega a la página de alta de autores.
