@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Proyecto Django{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Bienvenido a Mi Proyecto Django{% endblock %}</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'app:search' %}">Buscar</a></li>
+                <li><a href="{% url 'app:model1_create' %}">Alta De Alquiler</a></li>
+                <li><a href="{% url 'app:model2_create' %}">Alta de Titulos</a></li>
+                <li><a href="{% url 'app:model3_create' %}">Alta de Autores</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Mi Proyecto Django</p>
+    </footer>
+</body>
+</html>
