@@ -1,20 +1,20 @@
 from django.db import models
 
-class Model1(models.Model):
+class Persona(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
 
     def __str__(self):
         return f'<b>Nombre:</b> {self.nombre} - <b>Libro alquilado:</b> {self.descripcion}'
 
-class Model2(models.Model):
+class Libro(models.Model):
     titulo = models.CharField(max_length=100)
     fecha = models.DateField()
 
     def __str__(self):
         return f'<b>Titulo:</b> {self.titulo} - <b>Fecha de entrada:</b> {self.fecha}'
 
-class Model3(models.Model):
+class Autor(models.Model):
     autor = models.CharField(max_length=100)
     contenido = models.TextField()
 
