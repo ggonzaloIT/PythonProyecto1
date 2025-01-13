@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}Resultados de la Búsqueda{% endblock %}
+
+{% block header %}Resultados de la Búsqueda{% endblock %}
+
+{% block content %}
+<h1>Buscar en la Base de Datos</h1>
+<form method="GET" action="{% url 'app:search' %}">
+    <label for="query">Ingrese su búsqueda:</label>
+    <input type="text" id="query" name="query" value="{{ request.GET.query }}" required>
+    <button type="submit">Buscar</button>
+</form>
+
+<h2>Resultados de la Búsqueda</h2>
+{% if results %}
+    <ul>
+    {% for result in results %}
+        <li>{{ result|safe }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron resultados.</p>
+{% endif %}
+{% endblock %}
