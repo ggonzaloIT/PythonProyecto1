@@ -35,6 +35,10 @@ class BlogPostListView(ListView):
     template_name = 'app/blogpost_list.html'
     context_object_name = 'blogposts'
 
+    def get_queryset(self):
+        return BlogPost.objects.all()
+        
+
 
 class PersonaCreateView(LoginRequiredMixin,CreateView):
     model = Persona

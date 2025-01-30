@@ -18,4 +18,5 @@
     {% if error %}
         <p>{{ error }}</p>
     {% endif %}
+    <p>¿No tienes una cuenta? <a href="{% url 'accounts:register' %}">Regístrate aquí</a></p>
 {% endblock %}

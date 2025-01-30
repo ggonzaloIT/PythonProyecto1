@@ -10,9 +10,17 @@
     <p><strong>Autor:</strong> {{ blogpost.autor }}</p>
     <p><strong>Fecha de Publicación:</strong> {{ blogpost.fecha_publicacion }}</p>
     <div>
-        <img src="{{ blogpost.imagen.url }}" alt="{{ blogpost.titulo }}">
+        {% if blogpost.imagen %}
+            <img src="{{ blogpost.imagen.url }}" alt="{{ blogpost.titulo }}">
+        {% else %}
+            <p>No hay imagen disponible.</p>
+        {% endif %}
     </div>
     <div>
         {{ blogpost.contenido|safe }}
     </div>
+    {% if user.is_authenticated %}
+        <a href="{% url 'app:blogpost_edit' blogpost.pk %}">Editar</a>
+        <a href="{% url 'app:blogpost_delete' blogpost.pk %}">Borrar</a>
+    {% endif %}
 {% endblock %}
