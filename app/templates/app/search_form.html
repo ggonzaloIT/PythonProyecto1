@@ -7,7 +7,7 @@
 
 {% block content %}
 <h1>Buscar en la Base de Datos</h1>
-<form method="GET" action="{% url 'app:search' %}">
+<form method="GET" action="{% url 'app:search' %}" enctype="multipart/form-data">
     <label for="query">Ingrese su búsqueda:</label>
     <input type="text" id="query" name="query" required>
     <button type="submit">Buscar</button>

@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}Bandeja de Entrada{% endblock %}
+
+{% block header %}Bandeja de Entrada{% endblock %}
+
+{% block content %}
+    <h1>Bandeja de Entrada</h1>
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>
+                <strong>De:</strong> {{ message.sender.username }}<br>
+                <strong>Asunto:</strong> {{ message.subject }}<br>
+                <strong>Mensaje:</strong> {{ message.body }}<br>
+                <strong>Fecha:</strong> {{ message.timestamp }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tienes mensajes en tu bandeja de entrada.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}Listado de BlogPosts{% endblock %}
+
+{% block header %}Listado de BlogPosts{% endblock %}
+
+{% block content %}
+    <h1>Listado de BlogPosts</h1>
+    {% if blogposts %}
+        <ul>
+        {% for blogpost in blogposts %}
+            <li>
+                <a href="{% url 'app:blogpost_detail' blogpost.pk %}">{{ blogpost.titulo }}</a>
+                - {{ blogpost.fecha_publicacion }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay BlogPosts disponibles.</p>
+    {% endif %}
+{% endblock %}
