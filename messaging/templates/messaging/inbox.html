@@ -7,6 +7,10 @@
 
 {% block content %}
     <h1>Bandeja de Entrada</h1>
+    <div class="inbox-actions">
+        <a href="{% url 'messaging:sent' %}" class="btn btn-secondary">Ver Mensajes Enviados</a>
+        <a href="{% url 'messaging:send_message' %}" class="btn btn-primary">Crear Nuevo Mensaje</a>
+    </div>
     {% if messages %}
         <ul>
         {% for message in messages %}

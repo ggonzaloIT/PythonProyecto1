@@ -11,7 +11,7 @@
     <p><strong>Fecha de Publicación:</strong> {{ blogpost.fecha_publicacion }}</p>
     <div>
         {% if blogpost.imagen %}
-            <img src="{{ blogpost.imagen.url }}" alt="{{ blogpost.titulo }}">
+            <img src="{{ blogpost.imagen.url }}" alt="{{ blogpost.titulo }}" class="blogpost-image">
         {% else %}
             <p>No hay imagen disponible.</p>
         {% endif %}

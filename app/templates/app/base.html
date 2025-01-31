@@ -12,13 +12,21 @@
         <h1>{% block header %}Bienvenido a Mi Proyecto Django{% endblock %}</h1>
         <nav>
             <ul>
+                <li><a href="{% url 'app:home' %}">Inicio</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'accounts:profile' %}">Perfil</a></li>
+                    <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                    <li><a href="{% url 'messaging:inbox' %}">Mensajes</a></li> <!-- Agregar enlace a Mensajes -->
+                {% else %}
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:register' %}">Registrarse</a></li>
+                {% endif %}
                 <li><a href="{% url 'app:search' %}">Buscar</a></li>
                 <li><a href="{% url 'app:alquiler_create' %}">Alta De Alquiler</a></li>
                 <li><a href="{% url 'app:libro_create' %}">Alta de Titulos</a></li>
                 <li><a href="{% url 'app:autor_create' %}">Alta de Autores</a></li>
-                <li><a href="{% url 'app:home' %}">Inicio</a></li>
+                <li><a href="{% url 'app:blogpost_list' %}">Blogs</a></li>
                 <li><a href="{% url 'app:about' %}">Acerca de mí</a></li>
-                <li><a href="{% url 'app:blogpost_list' %}">Blogs</a></li> <!-- Agregar acceso a Blogs -->
             </ul>
         </nav>
     </header>

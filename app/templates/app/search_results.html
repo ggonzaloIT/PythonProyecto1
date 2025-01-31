@@ -6,21 +6,30 @@
 {% block header %}Resultados de la Búsqueda{% endblock %}
 
 {% block content %}
-<h1>Buscar en la Base de Datos</h1>
-<form method="GET" action="{% url 'app:search' %}">
-    <label for="query">Ingrese su búsqueda:</label>
-    <input type="text" id="query" name="query" value="{{ request.GET.query }}" required>
-    <button type="submit">Buscar</button>
-</form>
+<div class="search-container">
+    <h1>Buscar en la Base de Datos</h1>
+    <form method="GET" action="{% url 'app:search' %}" class="search-form">
+        <label for="query">Ingrese su búsqueda:</label>
+        <input type="text" id="query" name="query" value="{{ request.GET.query }}" required>
+        <button type="submit">Buscar</button>
+    </form>
 
-<h2>Resultados de la Búsqueda</h2>
-{% if results %}
-    <ul>
-    {% for result in results %}
-        <li>{{ result|safe }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No se encontraron resultados.</p>
-{% endif %}
+    <h2>Resultados de la Búsqueda</h2>
+    {% if results %}
+        <ul class="search-results">
+        {% for result in results %}
+            <li class="search-result-item">
+                {% if result.imagen %}
+                    <img src="{{ result.imagen.url }}" alt="{{ result }}" class="search-result-image">
+                {% endif %}
+                <div class="search-result-text">
+                    {{ result|safe }}
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron resultados.</p>
+    {% endif %}
+</div>
 {% endblock %}

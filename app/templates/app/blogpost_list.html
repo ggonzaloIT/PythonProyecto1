@@ -17,7 +17,7 @@
                 <a href="{% url 'app:blogpost_detail' blogpost.pk %}">{{ blogpost.titulo }}</a>
                 - {{ blogpost.fecha_publicacion }}
                 <p>{{ blogpost.contenido|truncatewords:30 }}</p>
-                <a href="{% url 'app:blogpost_detail' blogpost.pk %}">Leer más</a>
+                <!-- <a href="{% url 'app:blogpost_detail' blogpost.pk %}">Leer más</a> -->
             </li>
         {% endfor %}
         </ul>

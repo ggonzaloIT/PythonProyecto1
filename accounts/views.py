@@ -46,7 +46,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('app:home')
         else:
             return render(request, 'accounts/login.html', {'error': 'Invalid username or password'})
     return render(request, 'accounts/login.html')
@@ -54,4 +54,4 @@ def login_view(request):
 @login_required
 def logout_view(request):
     logout(request)
-    return redirect('home')
+    return redirect('app:home')

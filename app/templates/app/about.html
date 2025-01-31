@@ -6,6 +6,13 @@
 {% block header %}Acerca de mí{% endblock %}
 
 {% block content %}
-    <h1>Acerca de mí</h1>
-    <p>Información sobre el autor del sitio.</p>
+    <div class="about-container">
+        <h1>Acerca de mí</h1>
+        <div class="about-content">
+            <img src="{% static 'images/mi_foto.jpg' %}" alt="Foto de Gonzalo Gerez" class="about-photo">
+            <div class="about-text">
+                <p>Mi nombre es Gonzalo Gerez, soy estudiante de la carrera Ingeniería en Sistemas de Información en la UTN. Tengo 24 años, me encanta la programación y en este proyecto estoy demostrando lo que aprendí en el curso de Python.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
